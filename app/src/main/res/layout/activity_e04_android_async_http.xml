@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".E04AndroidAsyncHttp">
+
+    <EditText
+        android:id="@+id/urlTxt"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_toLeftOf="@+id/go"
+        android:hint="@string/enterUrl"
+        android:inputType="textUri"
+        android:text="@string/defaultUrl" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/go"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/urlTxt">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="120dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

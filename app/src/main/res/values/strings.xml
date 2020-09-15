@@ -1,0 +1,26 @@
+<resources>
+
+    <!--    E01     -->
+
+    <string name="app_name">Session8</string>
+
+    <string name="enterUrl">Enter URL …</string>
+
+    <string name="defaultUrl">https://trainzero.000webhostapp.com/learnfiles/season8/e01.php</string>
+
+    <!--    E02     -->
+
+    <string name="checkConnectivity">Check Connectivity</string>
+    <string name="netState">Network State</string>
+    <string name="connected">Connected! :)</string>
+    <string name="notConnected">Not Connected! :(</string>
+    <string name="dataAvailable">Data Available</string>
+    <string name="dataNotAvailable">Data Not Available</string>
+
+    <!--    E03     -->
+
+    <!--    E04     -->
+    <string name="failed">Failed</string>
+    <string name="failedToGetData">Failed retrieve data:</string>
+
+</resources>
