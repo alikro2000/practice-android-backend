@@ -14,11 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".E05JSONArray">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".E01HttpConnection" />
         <activity android:name=".E02NetworkState" />
         <activity android:name=".E03NetworkStateChangeReceiver" />
-
         <activity android:name=".E04AndroidAsyncHttp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
