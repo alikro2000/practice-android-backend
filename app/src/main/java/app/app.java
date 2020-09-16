@@ -13,8 +13,8 @@ public class app {
 
     public static class main {
         public static final String TAG = "Season8";
-//        public static final String BASE_URL = "https://trainzero.000webhostapp.com/";
-        public static final String BASE_URL = "http://";
+        //        public static final String BASE_URL = "https://trainzero.000webhostapp.com/";
+        public static final String BASE_URL = "http://localhost:63342/Season8/";
     }
 
     public static void l(String message) {

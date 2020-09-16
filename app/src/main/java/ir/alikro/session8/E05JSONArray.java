@@ -8,10 +8,15 @@ import android.os.Bundle;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import adapter.E05Adapter;
+import app.MyHttpClient;
+import cz.msebera.android.httpclient.Header;
+import app.*;
 
 public class E05JSONArray extends AppCompatActivity {
 
@@ -43,6 +48,19 @@ public class E05JSONArray extends AppCompatActivity {
     }
 
     private void getData() {
-        
+
+        MyHttpClient.get("E05JSONArray.php?_ijt=69f90ba04pe3pvhckf4d94d1af"
+                , null, new AsyncHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        app.l(new String(responseBody));
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                    }
+                });
+
     }
 }
