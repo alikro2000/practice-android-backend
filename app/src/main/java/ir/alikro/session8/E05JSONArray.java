@@ -10,6 +10,9 @@ import android.view.animation.LayoutAnimationController;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,18 +52,35 @@ public class E05JSONArray extends AppCompatActivity {
 
     private void getData() {
 
-        MyHttpClient.get("E05JSONArray.php?_ijt=69f90ba04pe3pvhckf4d94d1af"
+        MyHttpClient.get("E05JSONArray.php"
                 , null, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                         app.l(new String(responseBody));
+                        try {
+                            parseJSONArray(new String(responseBody));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
 
                     @Override
                     public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                        app.l(getString(R.string.failedToGetData) + statusCode);
                     }
                 });
 
+    }
+
+    private void parseJSONArray(String message) throws JSONException {
+
+        list.clear();
+
+        JSONArray jsonArray = new JSONArray(message);
+        for (int i = 0; i < jsonArray.length(); ++i) {
+            list.add(jsonArray.getString(i));
+        }
+
+        adapter.notifyDataSetChanged();
     }
 }

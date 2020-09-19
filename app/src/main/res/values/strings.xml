@@ -21,6 +21,6 @@
 
     <!--    E04     -->
     <string name="failed">Failed</string>
-    <string name="failedToGetData">Failed retrieve data:</string>
+    <string name="failedToGetData">Failed to retrieve data:</string>
 
 </resources>
