@@ -1,6 +1,8 @@
 package objects;
 
-public class E06Customers {
+import java.io.Serializable;
+
+public class E06Customers implements Serializable {
 
     private int CustomerID;
     public String CustomerName;
@@ -14,7 +16,7 @@ public class E06Customers {
     }
 
     public E06Customers(String jsonString) {
-        
+
     }
 
     public int getCustomerID() {

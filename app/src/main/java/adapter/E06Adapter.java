@@ -1,6 +1,7 @@
 package adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import ir.alikro.session8.E06CustomersActivity;
 import ir.alikro.session8.R;
 import objects.E06Customers;
 
@@ -58,7 +60,11 @@ public class E06Adapter extends RecyclerView.Adapter<E06Adapter.E06ViewHolder> {
 
         @Override
         public void onClick(View v) {
-            //TODO: onlick
+
+            Intent intent = new Intent(activity, E06CustomersActivity.class);
+            intent.putExtra(E06CustomersActivity.OBJECT_KEY, customers.get(getAdapterPosition()));
+            activity.startActivity(intent);
+
         }
     }
 
