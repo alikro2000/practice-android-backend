@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -30,6 +32,7 @@ public class E06JSONObject extends AppCompatActivity {
     List<E06Customer> customers;
     E06Adapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
+    TextView noData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,8 @@ public class E06JSONObject extends AppCompatActivity {
                 getData();
             }
         });
+
+        noData = findViewById(R.id.noData);
 
         getData();
     }
@@ -100,6 +105,14 @@ public class E06JSONObject extends AppCompatActivity {
             }
 
             adapter.notifyDataSetChanged();
+
+            if (customers.size() != 0) {
+                noData.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
+            } else {
+                noData.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.GONE);
+            }
 
         } catch (JSONException e) {
             e.toString();
