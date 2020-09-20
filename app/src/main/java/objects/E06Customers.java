@@ -1,6 +1,11 @@
 package objects;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+
+import app.*;
 
 public class E06Customers implements Serializable {
 
@@ -15,8 +20,18 @@ public class E06Customers implements Serializable {
     public E06Customers() {
     }
 
-    public E06Customers(String jsonString) {
-
+    public E06Customers(JSONObject jsonObject) {
+        try {
+            setCustomerID(jsonObject.getInt(ROUTER.CustomerID));
+            setCustomerName(jsonObject.getString(ROUTER.CustomerName));
+            setContactName(jsonObject.getString(ROUTER.ContactName));
+            setAddress(jsonObject.getString(ROUTER.Address));
+            setCity(jsonObject.getString(ROUTER.City));
+            setPostalCode(jsonObject.getString(ROUTER.PostalCode));
+            setCountry(jsonObject.getString(ROUTER.Country));
+        } catch (JSONException e) {
+            app.l(e.toString());
+        }
     }
 
     public int getCustomerID() {

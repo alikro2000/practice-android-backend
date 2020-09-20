@@ -97,19 +97,7 @@ public class E06JSONObject extends AppCompatActivity {
             JSONArray jsonArray = new JSONArray(data);
 
             for (int i = 0; i < jsonArray.length(); ++i) {
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                app.l(jsonObject.getString(ROUTER.CustomerName));
-
-                E06Customers singleCustomer = new E06Customers();
-                singleCustomer.setCustomerID(jsonObject.getInt(ROUTER.CustomerID));
-                singleCustomer.setCustomerName(jsonObject.getString(ROUTER.CustomerName));
-                singleCustomer.setContactName(jsonObject.getString(ROUTER.ContactName));
-                singleCustomer.setAddress(jsonObject.getString(ROUTER.Address));
-                singleCustomer.setCity(jsonObject.getString(ROUTER.City));
-                singleCustomer.setPostalCode(jsonObject.getString(ROUTER.PostalCode));
-                singleCustomer.setCountry(jsonObject.getString(ROUTER.Country));
-
-                customers.add(singleCustomer);
+                customers.add(new E06Customers(jsonArray.getJSONObject(i)));
             }
 
             adapter.notifyDataSetChanged();
