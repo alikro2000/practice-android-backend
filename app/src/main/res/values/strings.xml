@@ -23,4 +23,13 @@
     <string name="failed">Failed</string>
     <string name="failedToGetData">Failed to retrieve data:</string>
 
+    <!--    E06     -->
+    <string name="CustomerID">CustomerID</string>
+    <string name="CustomerName">CustomerName</string>
+    <string name="ContactName">ContactName</string>
+    <string name="Address">Address</string>
+    <string name="City">City</string>
+    <string name="PostalCode">PostalCode</string>
+    <string name="Country">Country</string>
+
 </resources>

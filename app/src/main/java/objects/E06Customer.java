@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 import app.*;
 
-public class E06Customers implements Serializable {
+public class E06Customer implements Serializable {
 
     private int CustomerID;
     public String CustomerName;
@@ -17,10 +17,10 @@ public class E06Customers implements Serializable {
     public String PostalCode;
     public String Country;
 
-    public E06Customers() {
+    public E06Customer() {
     }
 
-    public E06Customers(JSONObject jsonObject) {
+    public E06Customer(JSONObject jsonObject) {
         try {
             setCustomerID(jsonObject.getInt(ROUTER.CustomerID));
             setCustomerName(jsonObject.getString(ROUTER.CustomerName));

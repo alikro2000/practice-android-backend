@@ -15,14 +15,14 @@ import java.util.List;
 
 import ir.alikro.session8.E06CustomersActivity;
 import ir.alikro.session8.R;
-import objects.E06Customers;
+import objects.E06Customer;
 
 public class E06Adapter extends RecyclerView.Adapter<E06Adapter.E06ViewHolder> {
 
     Activity activity;
-    List<E06Customers> customers;
+    List<E06Customer> customers;
 
-    public E06Adapter(Activity activity, List<E06Customers> customers) {
+    public E06Adapter(Activity activity, List<E06Customer> customers) {
         this.activity = activity;
         this.customers = customers;
     }

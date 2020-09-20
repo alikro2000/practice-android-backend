@@ -20,6 +20,7 @@
         <activity android:name=".E03NetworkStateChangeReceiver" />
         <activity android:name=".E04AndroidAsyncHttp" />
         <activity android:name=".E05JSONArray" />
+        <activity android:name=".E06CustomersActivity" />
 
         <activity android:name=".E06JSONObject">
             <intent-filter>

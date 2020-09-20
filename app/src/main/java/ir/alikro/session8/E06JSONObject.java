@@ -13,7 +13,6 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +20,14 @@ import java.util.List;
 import adapter.E06Adapter;
 import app.MyHttpClient;
 import cz.msebera.android.httpclient.Header;
-import objects.E06Customers;
+import objects.E06Customer;
 
 import app.*;
 
 public class E06JSONObject extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    List<E06Customers> customers;
+    List<E06Customer> customers;
     E06Adapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
 
@@ -44,7 +43,7 @@ public class E06JSONObject extends AppCompatActivity {
     private void init() {
 
         recyclerView = findViewById(R.id.recyclerView);
-        customers = new ArrayList<E06Customers>();
+        customers = new ArrayList<E06Customer>();
         adapter = new E06Adapter(this, customers);
 
         recyclerView.setAdapter(adapter);
@@ -97,7 +96,7 @@ public class E06JSONObject extends AppCompatActivity {
             JSONArray jsonArray = new JSONArray(data);
 
             for (int i = 0; i < jsonArray.length(); ++i) {
-                customers.add(new E06Customers(jsonArray.getJSONObject(i)));
+                customers.add(new E06Customer(jsonArray.getJSONObject(i)));
             }
 
             adapter.notifyDataSetChanged();
